@@ -1,8 +1,8 @@
 {
   "name": "weblink.vim",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "Copy to the system clipboard a link to the current file open with vim.",
+  "description": "Copy to the clipboard a web link to your git host for current open file in vim.",
   "directories": {
     "doc": "doc"
   },

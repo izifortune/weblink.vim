@@ -1,6 +1,6 @@
 # Weblink.vim
 
-Copy to the system clipboard a link to the current file open with vim.
+Copy to the clipboard a web link to your git host for current open file in vim.
 
 DISCLAIMER:
 
