@@ -7,7 +7,8 @@ if exists("g:loaded_weblink")
   finish
 endif
 
-let g:loaded_weblink = 1
+let s:save_cpo = &cpo
+set cpo&vim
 
 let s:host_type = get(g:, 'weblink_host_type')
 let s:host_url = get(g:, 'weblink_host_url')
@@ -33,3 +34,8 @@ function! s:WebLink(...) abort
 endfunction
 
 command! -nargs=? WebLink call s:WebLink(<f-args>)
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+let g:loaded_weblink = 1
