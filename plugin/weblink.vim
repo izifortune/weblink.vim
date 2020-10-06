@@ -20,10 +20,16 @@ let s:host_url_prefix = get(g:, 'weblink_host_url_prefix', '/projects/')
 " Passing an argument will also append the current line in the url
 function! s:WebLink(...) abort
   let l:urlList = split(system("git config --get remote.origin.url"), '/')
-  let l:project = l:urlList[3]
-  let l:repo = substitute(split(system("git config --get remote.origin.url"), '/')[4], '\.git.*', '', '')
-  let l:filepath = split(expand('%:p:h'), l:repo)[1]
+  let l:project = l:urlList[-2]
+  let l:repo = substitute(l:urlList[-1], '\.git.*', '', '')
+  let l:filepath = split(expand('%:p:h'), l:repo)
+  if len(l:filepath) == 1
+    let l:filepath = ''
+  else
+    let l:filepath = l:filepath[1]
+  endif
   let l:filename = expand('%:t')
+
 
   if a:0
     let @+ = s:host_url . s:host_url_prefix . l:project .  "/repos/" . l:repo . "/browse" . l:filepath . "/" . l:filename . '#'. getcurpos()[1]
