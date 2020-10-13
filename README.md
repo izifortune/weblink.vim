@@ -15,7 +15,7 @@ to the specific file or line number for them to review it.
 Use your favourite plugin manager. Example with `Plug`
 
 ```
-Plug `izifortune/weblink.vim`
+Plug 'izifortune/weblink.vim'
 ```
 
 ## Configuration
