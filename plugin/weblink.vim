@@ -15,6 +15,25 @@ let s:host_url = get(g:, 'weblink_host_url')
 let s:host_url_prefix = get(g:, 'weblink_host_url_prefix', '/projects/')
 
 
+function! s:generateUrl(project, repo, filepath, ...) abort
+  let l:filename = expand('%:t')
+  let l:url = s:host_url . s:host_url_prefix . a:project .  "/repos/" . a:repo . "/browse" . a:filepath . "/" . l:filename
+
+  if a:0 
+    let l:url .=  "?at=" . a:0
+  endif
+
+  return l:url
+endfunction
+
+function! s:copyToClipboard(url, addLineNumber) abort
+  if a:addLineNumber
+    let @+ = a:url . '#'. getcurpos()[1]
+  else
+    let @+ = a:url
+  endif
+endfunction
+
 
 " Get a weblink of the current file in our company stash
 " Useful for sharing snippets and code with collegues
@@ -29,14 +48,9 @@ function! s:WebLink(...) abort
   else
     let l:filepath = l:filepath[1]
   endif
-  let l:filename = expand('%:t')
-  let l:url = s:host_url . s:host_url_prefix . l:project .  "/repos/" . l:repo . "/browse" . l:filepath . "/" . l:filename
 
-  if a:0
-    let @+ = l:url . '#'. getcurpos()[1]
-  else
-    let @+ = l:url
-  endif
+  let l:url = s:generateUrl(l:project, l:repo, l:filepath)
+  call s:copyToClipboard(l:url, a:0)
 endfunction
 
 " Get a weblink of the current file in our company stash with current branch
@@ -52,14 +66,10 @@ function! s:WebLinkBranch(...) abort
   else
     let l:filepath = l:filepath[1]
   endif
-  let l:filename = expand('%:t')
-  let l:url = s:host_url . s:host_url_prefix . l:project .  "/repos/" . l:repo . "/browse" . l:filepath . "/" . l:filename . "?at=" . l:branch
 
-  if a:0
-    let @+ = l:url . '#'. getcurpos()[1]
-  else
-    let @+ = l:url
-  endif
+  let l:url = s:generateUrl(l:project, l:repo, l:filepath, l:branch)
+
+  call s:copyToClipboard(l:url, a:0)
 endfunction
 
 command! -nargs=? WebLink call s:WebLink(<f-args>)
