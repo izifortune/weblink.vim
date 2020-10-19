@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/izifortune/weblink.vim/compare/v0.0.2...v0.0.3) (2020-10-19)
+
+
+### Features
+
+* **github:** Added github support ([774974a](https://github.com/izifortune/weblink.vim/commit/774974af7663b4a784b46bb6a9d8fb1e96dcd4c9))
+* **plugin:** add branch to the generated url ([1f59c29](https://github.com/izifortune/weblink.vim/commit/1f59c292d3f6630fcc27138e34edaf326cb394ca))
+* **weblink:** Extracted common logic into functions ([ef43e60](https://github.com/izifortune/weblink.vim/commit/ef43e6052c478bbf2237c4e5114ef06c0e4eb109))
+
 ### 0.0.2 (2020-10-06)
 
 
