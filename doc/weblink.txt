@@ -1,4 +1,4 @@
-*weblink.txt* Plugin for copying to clipboard stash links when browsing repositories.
+*weblink.txt* Plugin for copying to clipboard VCS links when browsing repositories.
 
 ===============================
 Introduction
@@ -6,22 +6,21 @@ Introduction
 When browsing your repositories you often want to share a link to a colleague
 to the specific file or line number for them to review it.
 
-It currently supports only MacOS (pbcopy) and stash directory structure
+It currently supports only MacOS (pbcopy) and github, stash directory structure
 
 ===============================
 Configuration
 
-
-`g:weblink_host_url` 
-  Add your your git host url including protocol and port eg: https://stash.com
-
-`g:weblink_host_url_prefix`
-  Add a prefix appended after the host eg: /projects/
-  
+None
 
 =================================
 Commands:
   
   `:WebLink ?`
-      Copy to the system clipboard the weblink to the file. Optional parameter of 1
-      will also append the line number.
+    Copy to the system clipboard the weblink to the file.
+    The optional parameter 1 will append the line number.
+
+
+  `:WebLinkBranch ?`
+    Copy to the system clipboard the weblink to the file including the branch.
+    The optional parameter 1 will append the line number.
