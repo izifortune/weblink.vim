@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/izifortune/weblink.vim/compare/v0.0.3...v0.0.4) (2020-10-21)
+
+
+### Bug Fixes
+
+* **stash:** Fix stash protocol and root level files ([ca81dbe](https://github.com/izifortune/weblink.vim/commit/ca81dbe7ba037761c75894b038d401d2c35770e3))
+
 ### [0.0.3](https://github.com/izifortune/weblink.vim/compare/v0.0.2...v0.0.3) (2020-10-19)
 
 
