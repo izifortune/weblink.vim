@@ -48,8 +48,13 @@ function! s:generateUrl(repoInfo, filepath, includeLine) abort
       let l:url .= '#L'. getcurpos()[1]
     endif
   elseif a:repoInfo.type ==# 'stash'
-    let l:url = join([a:repoInfo.host, 'projects', a:repoInfo.project,
-          \ 'repos', a:repoInfo.repo, 'browse', a:filepath, l:filename], '/')
+    if a:filepath
+      let l:path = a:filepath . '/' . l:filename
+    else
+      let l:path = l:filename
+    endif
+    let l:url = join(['https://', a:repoInfo.host, 'projects', a:repoInfo.project,
+          \ 'repos', a:repoInfo.repo, 'browse', l:path], '/')
     if a:includeLine
       let l:url .= '#'. getcurpos()[1]
     endif
