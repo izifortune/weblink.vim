@@ -48,7 +48,7 @@ function! s:generateUrl(repoInfo, filepath, includeLine) abort
       let l:url .= '#L'. getcurpos()[1]
     endif
   elseif a:repoInfo.type ==# 'stash'
-    if a:filepath
+    if len(a:filepath)
       let l:path = a:filepath . '/' . l:filename
     else
       let l:path = l:filename
