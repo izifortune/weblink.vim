@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/izifortune/weblink.vim/compare/v0.0.4...v0.0.5) (2020-11-09)
+
+
+### Bug Fixes
+
+* **weblink:** Fixed url for non root level files ([a882bba](https://github.com/izifortune/weblink.vim/commit/a882bbae58f9b00f83ce620d3778127b86826925))
+
 ### [0.0.4](https://github.com/izifortune/weblink.vim/compare/v0.0.3...v0.0.4) (2020-10-21)
 
 

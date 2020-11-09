@@ -1,6 +1,6 @@
 {
   "name": "weblink.vim",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "description": "Copy to the clipboard a web link to your git host for current open file in vim.",
   "directories": {
